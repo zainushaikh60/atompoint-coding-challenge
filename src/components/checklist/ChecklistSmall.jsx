@@ -9,7 +9,7 @@ const ChecklistSmall = ({
   currentUser,
 }) => {
   return (
-    <div className="md:hidden flex flex-col mx-4 my-3 border border-primary p-4 rounded-md text-sm">
+    <div className="md:hidden flex flex-col my-3 border border-primary p-4 rounded-md text-sm">
       <div className="flex items-center justify-between">
         <div
           className="w-5 h-5 p-1 border border-primary rounded-md cursor-pointer"

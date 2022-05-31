@@ -1,4 +1,3 @@
-import Scrollbars from "react-custom-scrollbars-2";
 import ChecklistHeader from "./ChecklistHeader";
 import Checklist from "./Checklist";
 
@@ -20,21 +19,17 @@ const ChecklistWrapper = ({
         </button>
       </div>
 
-      <div className="border py-3 rounded-md">
-        <div className="checklist-container">
-          <Scrollbars>
-            <ChecklistHeader />
-            {securityChecklist &&
-              securityChecklist.map((securityChecklist, index) => (
-                <Checklist
-                  key={index}
-                  securityChecklist={securityChecklist}
-                  currentUser={currentUser}
-                  updateSecurityChecklist={updateSecurityChecklist}
-                />
-              ))}
-          </Scrollbars>
-        </div>
+      <div className="md:border py-3 rounded-md">
+        <ChecklistHeader />
+        {securityChecklist &&
+          securityChecklist.map((securityChecklist, index) => (
+            <Checklist
+              key={index}
+              securityChecklist={securityChecklist}
+              currentUser={currentUser}
+              updateSecurityChecklist={updateSecurityChecklist}
+            />
+          ))}
       </div>
     </div>
   );

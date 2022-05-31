@@ -1,7 +1,11 @@
 const Loading = ({ center }) => {
   return (
-    <div className={`w-16 h-16 ${center && "m-auto"}`}>
-      <img src="/loading.gif" alt="loading..." />
+    <div
+      className={`w-full h-full ${
+        center && "flex items-center justify-center"
+      }`}
+    >
+      <img className="w-14 h-14" src="/loading.gif" alt="loading..." />
     </div>
   );
 };

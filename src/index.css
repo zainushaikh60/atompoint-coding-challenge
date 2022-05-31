@@ -25,5 +25,5 @@ body,
 }
 
 .checklist-container {
-  height: calc(100vh - 490px);
+  height: calc(100vh - 300px);
 }
