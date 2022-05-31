@@ -34,6 +34,7 @@ const ChecklistContainer = ({
     <ChecklistWrapper
       securityChecklist={securityChecklist}
       currentUser={currentUser}
+      updateSecurityChecklist={updateSecurityChecklist}
       clearSecurityChecklistFilters={clearSecurityChecklistFilters}
     />
   );
