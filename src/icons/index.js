@@ -8,6 +8,7 @@ import {
   DotsVerticalIcon,
   MailIcon,
   PhoneIcon,
+  BriefcaseIcon,
 } from "@heroicons/react/solid";
 
 export {
@@ -20,4 +21,5 @@ export {
   DotsVerticalIcon,
   MailIcon,
   PhoneIcon,
+  BriefcaseIcon,
 };

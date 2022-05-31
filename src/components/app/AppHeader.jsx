@@ -5,12 +5,13 @@ import {
   MailIcon,
   PhoneIcon,
   UserIcon,
+  BriefcaseIcon,
 } from "../../icons";
 import AppLogo from "./AppLogo";
 import IconContainer from "../ui/IconContainer";
 import AuthContext from "../../contexts/auth/authContext";
 
-const AppHeader = ({ fullName, email, phoneNumber }) => {
+const AppHeader = ({ fullName, email, company, phoneNumber }) => {
   const authContext = useContext(AuthContext);
   const { onSignOut } = authContext;
 
@@ -45,6 +46,13 @@ const AppHeader = ({ fullName, email, phoneNumber }) => {
                   <MailIcon />
                 </IconContainer>
                 <span>{email}</span>
+              </div>
+
+              <div className="flex space-x-2 text-black border-b p-3">
+                <IconContainer className="w-5 h-5 text-gray-400">
+                  <BriefcaseIcon />
+                </IconContainer>
+                <span>{company}</span>
               </div>
 
               <div className="flex space-x-2 text-black border-b p-3">

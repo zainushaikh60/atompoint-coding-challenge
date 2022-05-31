@@ -48,6 +48,7 @@ const Dashboard = () => {
         fullName={currentUser.fullName}
         email={currentUser.email}
         phoneNumber={currentUser.phoneNumber}
+        company={currentUser.company}
       />
 
       <FilterContainer

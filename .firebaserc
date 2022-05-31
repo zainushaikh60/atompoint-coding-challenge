@@ -1,0 +1,7 @@
+{
+  "projects": {
+    "staging": "security-checklist-development",
+    "default": "security-checklist-development"
+  },
+  "targets": {}
+}
