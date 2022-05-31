@@ -10,6 +10,7 @@ import {
   SET_UPDATE_SECURITY_CHECKLIST_LOADING,
   CLEAR_UPDATE_SECURITY_CHECKLIST_ERROR,
   CLEAR_SECURITY_CHECKLIST_FILTERS,
+  CLEAR_SECURITY_CHECKLIST_STATE,
 } from "../types";
 
 const securityChecklistReducer = (state, action) => {
@@ -66,6 +67,7 @@ const securityChecklistReducer = (state, action) => {
         filteredByService: null,
         currentFilter: null,
       };
+
     case UPDATE_SECURITY_CHECKLIST:
       return {
         ...state,
@@ -103,6 +105,19 @@ const securityChecklistReducer = (state, action) => {
       return {
         ...state,
         updateSecurityChecklistLoading: true,
+      };
+    case CLEAR_SECURITY_CHECKLIST_STATE:
+      return {
+        ...state,
+        securityChecklist: null,
+        filteredSecurityChecklist: null,
+        securityChecklistLoading: false,
+        securityChecklistError: null,
+        updateSecurityChecklistError: null,
+        updateSecurityChecklistLoading: null,
+        currentFilter: null,
+        filteredByCloud: null,
+        filteredByService: null,
       };
     default:
       return state;

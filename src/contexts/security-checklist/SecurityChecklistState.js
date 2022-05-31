@@ -14,6 +14,7 @@ import {
   UPDATE_SECURITY_CHECKLIST,
   UPDATE_SECURITY_CHECKLIST_ERROR,
   CLEAR_SECURITY_CHECKLIST_FILTERS,
+  CLEAR_SECURITY_CHECKLIST_STATE,
 } from "../types";
 
 const SecurityChecklistState = ({ children }) => {
@@ -145,6 +146,14 @@ const SecurityChecklistState = ({ children }) => {
     });
   };
 
+  // Clear Security Checklist State
+
+  const clearSecurityChecklistState = () => {
+    dispatch({
+      type: CLEAR_SECURITY_CHECKLIST_STATE,
+    });
+  };
+
   const [state, dispatch] = useReducer(securityChecklistReducer, initialState);
 
   return (
@@ -166,6 +175,7 @@ const SecurityChecklistState = ({ children }) => {
         setUpdateSecurityChecklistLoading,
         clearUpdateSecurityChecklistError,
         clearSecurityChecklistFilters,
+        clearSecurityChecklistState,
       }}
     >
       {children}

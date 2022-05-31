@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState } from "react";
 import {
   LogoutIcon,
   DotsVerticalIcon,
@@ -9,12 +9,15 @@ import {
 } from "../../icons";
 import AppLogo from "./AppLogo";
 import IconContainer from "../ui/IconContainer";
-import AuthContext from "../../contexts/auth/authContext";
 
-const AppHeader = ({ fullName, email, company, phoneNumber }) => {
-  const authContext = useContext(AuthContext);
-  const { onSignOut } = authContext;
-
+const AppHeader = ({
+  fullName,
+  email,
+  company,
+  phoneNumber,
+  onSignOut,
+  clearSecurityChecklistState,
+}) => {
   const [showContextMenu, setShowContextMenu] = useState(false);
 
   return (
@@ -64,7 +67,10 @@ const AppHeader = ({ fullName, email, company, phoneNumber }) => {
 
               <div
                 className="flex space-x-2 text-black border-b p-3"
-                onClick={() => onSignOut()}
+                onClick={() => {
+                  onSignOut();
+                  clearSecurityChecklistState();
+                }}
               >
                 <IconContainer className="w-5 h-5 text-gray-400">
                   <LogoutIcon />

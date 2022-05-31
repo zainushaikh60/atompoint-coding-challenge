@@ -11,7 +11,7 @@ const Dashboard = () => {
   const authContext = useContext(AuthContext);
   const securityChecklistContext = useContext(SecurityChecklistContext);
 
-  const { currentUser, fetchAdditionalUserInfo } = authContext;
+  const { currentUser, fetchAdditionalUserInfo, onSignOut } = authContext;
 
   const {
     fetchSecurityChecklist,
@@ -25,6 +25,7 @@ const Dashboard = () => {
     filterSecurityChecklistByServiceProvider,
     currentFilter,
     clearSecurityChecklistFilters,
+    clearSecurityChecklistState,
   } = securityChecklistContext;
 
   useEffect(() => {
@@ -49,6 +50,8 @@ const Dashboard = () => {
         email={currentUser.email}
         phoneNumber={currentUser.phoneNumber}
         company={currentUser.company}
+        onSignOut={onSignOut}
+        clearSecurityChecklistState={clearSecurityChecklistState}
       />
 
       <FilterContainer
